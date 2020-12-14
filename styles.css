@@ -23,19 +23,21 @@ body {
 }
 
 .container {
-    max-width: 920px;
+    min-width: 920px;
     margin: 0 auto;
+    padding: 0 24px;
     height: max-content;
     display: flex;
 }
 
 .container .logobox {
-    width: 350px;
+    max-width: 350px;
     height: 200px;
     border-radius: 10px;
     background-color: hsl(228, 56%, 26%);
     padding: 32px;
     border-top-right-radius: 100px;
+    flex: 1;
 }
 
 .container .logobox nav ul {
@@ -177,4 +179,47 @@ body {
     background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
+}
+
+@media (max-width: 930px) {
+    body {
+        background-image: url('/images/bg-mobile.png');
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .container {
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .container .logobox {
+        max-width: 350px;
+        margin-bottom: 15px;
+    }
+
+    .container .contentbox {
+        max-width: 90vw;
+        min-width: 80vw;
+        margin-left: 0;
+        position: relative;
+    }
+
+    .container .contentbox .gb-left-tag {
+        width: 160px;
+        height: 70px;
+        background-color: white;
+        border-radius: 10px;
+        border-bottom-right-radius: 10px;
+        align-self: center;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: -20px;
+        order: 1;
+    }
+
+    .container .contentbox .gb-left-tag p::after {
+        display: none;
+    }
+
 }
