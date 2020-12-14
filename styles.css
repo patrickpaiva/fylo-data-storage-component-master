@@ -12,6 +12,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+
+    background-image: url('/images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 .container {
@@ -49,10 +57,124 @@ body {
     border-radius: 8px;
 }
 
-.attribution { 
-    font-size: 11px; 
-    text-align: center;
+.container .contentbox {
+    min-width: 540px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+    justify-content: flex-end;
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+
+.container .contentbox .gb-left-tag {
+    width: 160px;
+    height: 70px;
+    background-color: white;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    align-self: flex-end;
+    margin-right: 40px;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.container .contentbox .gb-left-tag p::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(19px);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.container .contentbox .gb-left-tag p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: hsl(229, 7%, 55%);
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container .contentbox .gb-left-tag span {
+    font-size: 36px;
+    margin-right: 5px;
+    color: hsl(229, 57%, 11%);
+}
+
+.container .contentbox .status {
+    height: 150px;
+    border-radius: 10px;
+    background-color: hsl(228, 56%, 26%);
+    padding: 40px;
+    color: hsl(243, 100%, 93%);
+}
+
+.container .contentbox .status >p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.container .contentbox .status .statusbar {
+    height: 20px;
+    width: 100%;
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container .contentbox .status .statusbar .progress-bar {
+    height: 14px;
+    width: 80%;
+    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 10px;
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container .contentbox .status .statusbar .progress-bar .dot {
+    width: 10px;
+    height: 10px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+.container .contentbox .status .space-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 20px; 
+    font-size: 13px; 
+    text-align: center;
+    color: hsl(243, 100%, 93%);
+}
+.attribution a {
+    text-decoration: none; 
+    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
